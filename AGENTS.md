@@ -41,7 +41,7 @@ Read [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md#failure-modes-that-produce-no
 
 1. **Features fail silently.** A feature renders only when its gem is loaded _and_ its flag is on _and_ the page opts in. Otherwise the Liquid tag emits an empty string — no warning, no error.
 2. **`Gemfile` and `_config.yml` are two lists that must agree.** A plugin in only one of them is inert. Adding or removing a plugin means editing both. Repo dirs use hyphens (`al-folio-core`); gem/plugin ids use underscores (`al_folio_core`).
-3. **This site's baseurl is `/personal-website`.** `_config.yml` already sets it, so a plain `bundle exec jekyll build` is correct — that is what `deploy.yml`, `broken-links-site.yml` and `axe.yml` run. Passing `--baseurl /personal-website` is redundant but harmless; passing the upstream template's `--baseurl /al-folio`, or blanking the baseurl out, renders the site unstyled with broken links. Dev server is at `http://localhost:4000/personal-website/`.
+3. **This site's baseurl is empty.** It is a GitHub user site served from the root of `https://yiqiaojin.github.io/`, and `_config.yml` already sets `baseurl:` to empty, so a plain `bundle exec jekyll build` is correct — that is what `deploy.yml`, `broken-links-site.yml` and `axe.yml` run. Passing a non-empty `--baseurl` (such as the upstream template's `/al-folio`) renders the site unstyled with broken links. Dev server is at `http://localhost:4000/`.
 
 ## Validated local command set
 
@@ -57,7 +57,7 @@ bundle exec al-folio upgrade audit
 bundle exec al-folio upgrade overrides audit
 bundle exec al-folio upgrade report
 docker compose up -d
-curl -fsS http://127.0.0.1:8080/personal-website/ >/dev/null
+curl -fsS http://127.0.0.1:8080/ >/dev/null
 docker compose logs --tail=80
 docker compose down
 ```
