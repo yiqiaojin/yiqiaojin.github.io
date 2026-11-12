@@ -1,6 +1,6 @@
 # Yiqiao Jin — personal website
 
-Source for my academic website, **<https://jdmunkjoey.github.io/personal-website/>**.
+Source for my academic website, **<https://yiqiaojin.github.io/>**.
 
 I am a Ph.D. student in Statistics at Washington University in St. Louis. The site covers my research, publications, talks, teaching, and CV.
 
@@ -28,7 +28,7 @@ bundle install
 bundle exec jekyll serve
 ```
 
-Then open <http://localhost:4000/personal-website/>. Responsive images need ImageMagick's `convert` on your `PATH` (`imagemagick.enabled` in `_config.yml`). [`docs/INSTALL.md`](docs/INSTALL.md) covers the rest of the setup.
+Then open <http://localhost:4000/>. Responsive images need ImageMagick's `convert` on your `PATH` (`imagemagick.enabled` in `_config.yml`). [`docs/INSTALL.md`](docs/INSTALL.md) covers the rest of the setup.
 
 ## Deploy
 
@@ -37,7 +37,7 @@ Every push to `main` that changes site content (pages, data, assets, or config) 
 1. **Settings → Actions → General → Workflow permissions**: select **Read and write permissions**.
 2. **Settings → Pages → Build and deployment**: set **Source** to **Deploy from a branch**, then choose `gh-pages` and `/ (root)`.
 
-To serve the site from `https://jdmunkjoey.github.io/` instead, rename the repository to `jdmunkjoey.github.io`, set `baseurl:` to empty in `_config.yml`, and update the site URL in `website:` in `_data/cv.yml` and at the top of this README.
+This is a GitHub user site: it is served from the root of `https://yiqiaojin.github.io/` because the repository is named `yiqiaojin.github.io` and `baseurl:` is empty in `_config.yml`. If the repository or GitHub username is renamed, update `url:` in `_config.yml`, `website:` in `_data/cv.yml`, and the link at the top of this README.
 
 ## Customization reference
 
